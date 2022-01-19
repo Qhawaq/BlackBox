@@ -7,7 +7,7 @@ BlackBox stream endcoder/decoder
 
 __author__ = "Mariano Mancini"
 __copyright__ = "Copyright 2022, Mariano Mancini"
-__credits__ = [""]
+__credits__ = ["Yaqub al-Kindi 'Risalah fi Istikhraj al Mu'amma', C.E. Shannon 'Communication Theory of Secrecy Systems', A.M. Turing 'GHCQ Papers' "]
 __license__ = "PRIVATE"
 __version__ = "1.0.0"
 __maintainer__ = "Mariano Mancini"
