@@ -40,11 +40,11 @@ class BlackBox:
 
     def get_local_key(self):
         """ Derive a local key from original plain file name """
-        l_key = bytearray(self.nm_file, 'UTF-8')
+        l_key = bytearray(self.nm_file, 'utf-8')
         if len(self.nm_file) < 16:
-            l_key = bytearray(self.nm_file, 'UTF-8') + get_random_bytes(16-len(self.nm_file))
+            l_key = bytearray(self.nm_file, 'utf-8') + get_random_bytes(16-len(self.nm_file))
         if len(self.nm_file) > 32:
-            l_key = bytearray(self.nm_file[:32], 'UTF-8')
+            l_key = bytearray(self.nm_file[:32], 'utf-8')
         return l_key
 
     def do_encode(self):
