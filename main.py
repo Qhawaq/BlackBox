@@ -1,8 +1,14 @@
 #!/usr/bin/python
 
 """
-BlackBox stream endcoder/decoder
+BlackBox - A fast stream encrpyter/decrypter.
 
+A robust, fast, GDPR compliant, no-fix-key (autokey) encrypter with remote controllable decryption.
+
+* GDPR data at rest     - yes, compliant
+* GDPR data in transit  - yes, compliant
+* GDPR data protection over 'data drop' to legal user remote machine - yes, compliant
+       using CryptoPlayer - A safe online/offline decrypter and player, (C) 2022 by Mariano Mancini  
 """
 
 __author__ = "Mariano Mancini"
@@ -11,7 +17,7 @@ __credits__ = ["Yaqub al-Kindi 'Risalah fi Istikhraj al Mu'amma', C.E. Shannon '
 __license__ = "PRIVATE"
 __version__ = "1.0.0"
 __maintainer__ = "Mariano Mancini"
-__email__ = "mariano.mancini@magaldinnova.it"
+__email__ = "qhawaq@gmail.com"
 __status__ = "Production"
 
 
