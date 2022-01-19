@@ -1,9 +1,27 @@
+#!/usr/bin/python
+
+"""
+BlackBox stream endcoder/decoder
+
+"""
+
+__author__ = "Mariano Mancini"
+__copyright__ = "Copyright 2022, Mariano Mancini"
+__credits__ = [""]
+__license__ = "PRIVATE"
+__version__ = "1.0.0"
+__maintainer__ = "Mariano Mancini"
+__email__ = "mariano.mancini@magaldinnova.it"
+__status__ = "Production"
+
+
 from Crypto.Hash import SHA512
 from Crypto.Cipher import Salsa20
 from Crypto.Random import get_random_bytes
 from Crypto.Protocol.KDF import PBKDF2
 
 REM_SALT_LEN = 16
+
 
 class BlackBox:
 
@@ -37,7 +55,7 @@ class BlackBox:
         cpr = Salsa20.new(key=self.b1_pwd)
         z_msg = cpr.nonce + cpr.encrypt(local_key)
         z_block0 = b"(C) 2022, Mariano Mancini " + len(z_msg).to_bytes(2, 'little') + z_msg + remote_salt
-        z_block0 += bytearray("ORG",'ascii')+len(self.nm_file).to_bytes(2, 'little')+bytearray(self.nm_file, 'ascii')
+        z_block0 += bytearray("ORG", 'ascii')+len(self.nm_file).to_bytes(2, 'little')+bytearray(self.nm_file, 'ascii')
         t_byt = get_random_bytes(512 - len(z_block0))
         z_block0 += t_byt
         z_block1 = get_random_bytes(26)+z_block0[26:]
@@ -68,8 +86,8 @@ class BlackBox:
             m_nonce = z_block[28:36]
 
             cpr = Salsa20.new(key=self.b1_pwd, nonce=m_nonce)
-            local_key  = cpr.decrypt(z_block[36:36 + (m_origin - 8)])
-            remote_salt = z_block[36+(m_origin-8):36+(m_origin-8)+REM_SALT_LEN]
+            local_key = cpr.decrypt(z_block[36:36 + (m_origin - 8)])
+            # remote_salt = z_block[36+(m_origin-8):36+(m_origin-8)+REM_SALT_LEN]
 
             # Decode the rest of file with the local key and nounce found in Z-Block
             m_nonce = self.b_content[512:520]
@@ -83,7 +101,7 @@ class BlackBox:
 
 
 if __name__ == '__main__':
-    #fl = BlackBox("Miofile.txt", b'my super secret0 con altra pass1')
-    #fl.do_encode()
+    # fl = BlackBox("Miofile.txt", b'my super secret0 con altra pass1')
+    # fl.do_encode()
     fl = BlackBox("Fileguats.txt", b'my super secret0 con altra pass1')
-    print (fl.do_decode())
+    print(fl.do_decode())
