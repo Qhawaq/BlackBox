@@ -8,12 +8,12 @@ A robust, fast, GDPR compliant, no-fix-key (autokey) encrypter with remote contr
 * GDPR data at rest     - yes, compliant
 * GDPR data in transit  - yes, compliant
 * GDPR data protection over 'data drop' to legal user remote machine - yes, compliant
-       using CryptoPlayer - A safe online/offline decrypter and player, (C) 2022 by Mariano Mancini  
+       using CryptoPlayer - A safe online/offline decrypter and player, (C) 2022 by Mariano Mancini
 """
 
 __author__ = "Mariano Mancini"
 __copyright__ = "Copyright 2022, Mariano Mancini"
-__credits__ = ["Yaqub al-Kindi 'Risalah fi Istikhraj al Mu'amma', C.E. Shannon 'Communication Theory of Secrecy Systems', A.M. Turing 'GHCQ Papers' "]
+__credits__ = ["Yaqub al-Kindi, C.E. Shannon, A.M. Turing "]
 __license__ = "PRIVATE"
 __version__ = "1.0.0"
 __maintainer__ = "Mariano Mancini"
@@ -27,6 +27,7 @@ from Crypto.Random import get_random_bytes
 from Crypto.Protocol.KDF import PBKDF2
 
 REM_SALT_LEN = 16
+
 
 
 class BlackBox:
