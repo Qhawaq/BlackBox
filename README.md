@@ -1,5 +1,16 @@
 ## BlackBox 
 
+__One GDPR compliant fast stream encrpyter/decrypter.__
+
+_(C) 2022 by Mariano Mancini_
+
+A robust, fast, GDPR compliant, no-fix-key (autokey) encrypter with remote controllable decryption.
+* GDPR data at rest     - yes, compliant
+* GDPR data in transit  - yes, compliant
+* GDPR data protection over 'data drop' to legal user remote machine - yes, compliant
+ 
+## 
+
 ### Formato codifica file
 ***
  Z-block| Payload - blocco dati | Z-block
